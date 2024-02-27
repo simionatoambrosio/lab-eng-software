@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 2</title>
+</head>
+<body>
+    <a href="../index.html">Voltar</a>
+    <!-- Implemente um script JavaScript que solicite ao usuário um número inteiro
+positivo. Assim que o usuário digitar um valor válido informe em uma janela
+de alerta se o número é ou não primo -->
+    <script>
+        let num = prompt("Digite um número inteiro positivo maior que 1", "");
+
+        // Verificar se o input é um número
+        if (!isNaN(num) && num > 1) {
+            alert("O número " + num + ePrimo(parseInt(num)));
+        } else {
+            alert("Por favor, digite um número válido.");
+        }
+
+        function ePrimo(num) {
+            var nDivisores = 0;
+            // pra ser primo, só pode ser divisível por 1 e por ele mesmo
+            // validando de 2 até n-1, se tiver algum outro divisor esse número não é primo
+            for(var i = 2; i < num; i++) {
+                if (num % i == 0) {
+                    nDivisores += 1
+                }
+            }
+            if (nDivisores == 0) {
+                return " é primo"
+            }
+            return " não é primo"
+        }
+    </script>
+</body>
+</html>

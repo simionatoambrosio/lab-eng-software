@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1</title>
+</head>
+<body>
+    <a href="../index.html">Voltar</a>
+    <script>
+        var dado = prompt("Informe um dado:");
+
+        if (dado !== null) {
+            var verificarTipo = confirm("Deseja verificar o tipo do dado informado?");
+            
+            // se clicar em Ok
+            if (verificarTipo) {
+                // verificar se é numérico
+                if (!isNaN(dado)) {
+                    // verificar se é inteiro
+                    if (Number.isInteger(parseFloat(dado))) {
+                        document.write("<h1>O tipo do dado é: int</h1>");
+                    } else {
+                        document.write("<h1>O tipo do dado é: float</h1>");
+                    }
+                }
+                // verificar se é booleano
+                else if (dado.toLowerCase() === 'true' || dado.toLowerCase() === 'false') {
+                    document.write("<h1>O tipo do dado é: boolean</h1>");
+                }
+                // se não for numérico ou booleano, é string
+                else {
+                    document.write("<h1>O tipo do dado é: string</h1>");
+                }
+            } else {
+                // se clicar em cancelar
+                document.write("<h1>Obrigado por visitar esta página</h1>");
+            }
+        } else {
+            // se input for nulo
+            document.write("<h1>Obrigado por visitar esta página</h1>");
+        }
+    </script>
+</body>
+</html>
